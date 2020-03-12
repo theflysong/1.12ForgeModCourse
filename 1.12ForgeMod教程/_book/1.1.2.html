@@ -1,0 +1,448 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.1.2 模组主类及代理(商) · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.1.3.html" />
+    
+    
+    <link rel="prev" href="1.1.1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <span>
+            
+                    
+                    一些废话
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    准备工作
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.1.1.html">
+            
+                <a href="1.1.1.html">
+            
+                    
+                    1.1.1 开发环境的构建，模组的运行、发布以及模组信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="1.1.2.html">
+            
+                <a href="1.1.2.html">
+            
+                    
+                    1.1.2 模组主类及代理(商)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1.1.3.html">
+            
+                <a href="1.1.3.html">
+            
+                    
+                    1.1.3 第一个物品
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >1.1.2 模组主类及代理(商)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="112-&#x6A21;&#x7EC4;&#x4E3B;&#x7C7B;&#x53CA;&#x4EE3;&#x7406;&#x5546;">1.1.2 &#x6A21;&#x7EC4;&#x4E3B;&#x7C7B;&#x53CA;&#x4EE3;&#x7406;<del>(&#x5546;)</del></h1>
+<hr>
+<h2 id="&#x6A21;&#x7EC4;&#x4E3B;&#x7C7B;">&#x6A21;&#x7EC4;&#x4E3B;&#x7C7B;</h2>
+<p>&#x5728;<code>src/main/java/flysong/BasicMod/</code>&#x4E0B;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;&#x3002;&#x8FD9;&#x4E2A;&#x7C7B;&#x5C31;&#x662F;&#x4F60;&#x7684;&#x6A21;&#x7EC4;&#x4E3B;&#x7C7B;&#xFF0C;&#x8FD9;&#x91CC;&#x63A8;&#x8350;&#x4EE5;&#x6A21;&#x7EC4;&#x540D;&#x4F1A;&#x6A21;&#x7EC4;ID&#x6765;&#x547D;&#x540D;&#x3002;&#x6211;&#x53D6;&#x7684;&#x540D;&#x5B57;&#x662F;<code>BasicMod</code>&#x3002;<br>&#x5982;&#x679C;&#x8981;&#x8BA9;Forge&#x53D1;&#x73B0;&#x4F60;&#x7684;&#x6A21;&#x7EC4;&#x4E3B;&#x7C7B;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x7528;<code>@Mod</code>&#x6CE8;&#x89E3;&#x6765;&#x4FEE;&#x9970;&#x4F60;&#x7684;&#x4E3B;&#x7C7B;&#x3002;<code>@MOD</code>&#x6CE8;&#x89E3;&#x6709;&#x8FD9;&#x4E48;&#x4E9B;&#x53C2;&#x6570;&#xFF1A;</p>
+<ul>
+<li><code>modid</code></li>
+<li><code>name</code></li>
+<li><code>version</code></li>
+<li><code>dependencies</code></li>
+<li><code>useMetadata</code></li>
+<li><code>clientSideOnly</code></li>
+<li><code>serverSideOnly</code></li>
+<li><code>acceptedMinecraftVersions</code></li>
+<li><code>acceptableRemoteVersions</code></li>
+<li><code>acceptableSaveVersions</code></li>
+<li><code>certificateFingerprint</code></li>
+<li><code>modLanguage</code></li>
+<li><code>modLanguageAdapter</code></li>
+<li><code>canBeDeactivated</code></li>
+<li><code>guiFactory</code></li>
+<li><code>updateJSON</code></li>
+<li><p><code>.........</code>
+&#x6211;&#x4EEC;&#x53EA;&#x6311;&#x5176;&#x4E2D;&#x51E0;&#x4E2A;&#x8BB2;</p>
+</li>
+<li><p><code>modid</code>:&#x6A21;&#x7EC4;&#x7684;ID,&#x7531;&#x4E8E;&#x5176;&#x4ED6;&#x6A21;&#x7EC4;&#x90FD;&#x662F;&#x7528;<code>modid</code>&#x6765;&#x786E;&#x5B9A;&#x4F60;&#x7684;&#x6A21;&#x7EC4;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x66F4;&#x6539;&#x4F60;&#x7684;<code>modid</code>&#x3002;&#x8FD9;&#x662F;&#x552F;&#x4E00;&#x4E00;&#x4E2A;&#x5FC5;&#x586B;&#x9879;&#x3002;</p>
+</li>
+<li><code>name</code>:&#x6A21;&#x7EC4;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x610F;&#x66F4;&#x6539;&#x3002;</li>
+<li><code>version</code>:&#x6A21;&#x7EC4;&#x7684;&#x7248;&#x672C;&#x3002;&#x5177;&#x4F53;&#x53EF;&#x4EE5;&#x53C2;&#x7167;&#x8C37;&#x6B4C;&#x4E00;&#x4E2A;&#x88AB;&#x79F0;&#x4E3A;&#x8BED;&#x4E49;&#x5316;&#x7248;&#x672C;&#x7684;&#x7EA6;&#x5B9A;&#x3002;&#x6211;&#x5728;&#x8FD9;&#x91CC;&#x7B80;&#x5355;&#x9610;&#x8FF0;&#xFF1A;<br>&#x7B2C;&#x4E00;&#x4E2A;&#x662F;&#x4E3B;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x5F53;&#x4F60;&#x7684;&#x6A21;&#x7EC4;&#x505A;&#x4E86;&#x5411;&#x4E0B;&#x4E0D;&#x517C;&#x5BB9;&#x7684;&#x66F4;&#x6539;&#xFF08;&#x6BD4;&#x5982;&#x5220;&#x9664;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x65B9;&#x6CD5;&#xFF09;&#xFF0C;&#x4F60;&#x5C31;&#x8981;&#x66F4;&#x65B0;&#x4F60;&#x7684;&#x4E3B;&#x7248;&#x672C;&#x53F7;&#x4E86;&#x3002;<br>&#x7B2C;&#x4E8C;&#x4E2A;&#x662F;&#x6B21;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x5F53;&#x4F60;&#x7684;&#x6A21;&#x7EC4;&#x505A;&#x4E86;&#x5411;&#x4E0B;&#x517C;&#x5BB9;&#x7684;&#x529F;&#x80FD;&#x6027;&#x66F4;&#x6539;&#xFF08;&#x5982;&#x66F4;&#x65B0;&#x7269;&#x54C1;&#xFF09;&#xFF0C;&#x5C31;&#x66F4;&#x65B0;&#x6B21;&#x7248;&#x672C;&#x53F7;&#x3002;<br>&#x7B2C;&#x4E09;&#x4E2A;&#x662F;&#x4FEE;&#x8BA2;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x5F53;&#x4F60;&#x7684;&#x6A21;&#x7EC4;&#x66F4;&#x65B0;&#x4E86;&#x4E00;&#x4E9B;&#x5411;&#x4E0B;&#x517C;&#x5BB9;&#x7684;&#x95EE;&#x9898;&#x4FEE;&#x6B63;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x6539;BUG)&#xFF0C;&#x5C31;&#x66F4;&#x65B0;&#x4FEE;&#x8BA2;&#x7248;&#x672C;&#x53F7;&#x3002;</li>
+<li><code>acceptedMinecraftVersions</code>:&#x6307;&#x5B9A;&#x4F60;&#x7684;&#x6A21;&#x7EC4;&#x5728;MC&#x7684;&#x54EA;&#x4E2A;&#x7248;&#x672C;&#x8FD0;&#x884C;&#x3002;&#x5B83;&#x4F7F;&#x7528;<a href="https://baike.baidu.com/item/%E5%8C%BA%E9%97%B4/1273117?fr=aladdin" target="_blank">&#x6570;&#x5B66;&#x533A;&#x95F4;&#x8868;&#x793A;&#x6CD5;</a>&#x6765;&#x8868;&#x793A;&#x3002;</li>
+<li><code>dependencies</code>&#xFF1A;&#x5982;&#x679C;&#x4F60;&#x5236;&#x4F5C;&#x67D0;&#x4E2A;&#x6A21;&#x7EC4;&#x7684;&#x9644;&#x5C5E;&#x6A21;&#x7EC4;,&#x4F60;&#x53EF;&#x4EE5;&#x7528;&#x5B83;&#x6765;&#x6307;&#x5B9A;&#x5B83;&#x6240;&#x4F9D;&#x8D56;&#x7684;&#x6A21;&#x7EC4;&#x7684;&#x6700;&#x4F4E;&#x7248;&#x672C;&#x3002;&#x4E00;&#x822C;&#x4EE5;<code>rule:modid@version</code>&#x6765;&#x8868;&#x793A;&#x3002;version&#x4E5F;&#x662F;&#x7528;&#x6570;&#x5B66;&#x533A;&#x95F4;&#x8868;&#x793A;&#x6CD5;&#x6765;&#x8868;&#x793A;&#x7684;&#x3002;<code>rule</code>&#x6709;&#x56DB;&#x79CD;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x4ECB;&#x7ECD;&#x4E24;&#x79CD;&#xFF0C;<code>required-before</code>&#x548C;<code>required-after</code>&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x6307;&#x5B9A;&#x672C;&#x6A21;&#x7EC4;&#x5E94;&#x52A0;&#x8F7D;&#x4E8E;&#x67D0;&#x4E2A;&#x6A21;&#x7EC4;&#x524D;&#x6216;&#x540E;&#xFF0C;&#x5E76;&#x4E14;&#x68C0;&#x67E5;&#x524D;&#x7F6E;&#x6A21;&#x7EC4;&#x662F;&#x5426;&#x6709;&#x6CA1;&#x6709;&#x6DFB;&#x52A0;,&#x5B83;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6307;&#x5B9A;Forge&#x7684;&#x7248;&#x672C;&#x3002;</li>
+<li><code>modLanguage</code>:&#x7F16;&#x5199;&#x6A21;&#x7EC4;&#x7528;&#x7684;&#x8BED;&#x8A00;&#x3002;&#x4F60;&#x5F53;&#x7136;&#x4E0D;&#x53EF;&#x4EE5;&#x7528;C/C++&#x6765;&#x7F16;&#x5199;&#xFF0C;&#x4E5F;&#x4E0D;&#x53EF;&#x80FD;&#x7528;&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x3002;&#x4F46;&#x662F;Forge&#x652F;&#x6301;Scala&#x3002;&#x5982;&#x679C;&#x4F60;&#x662F;Scala&#x7684;&#x7528;&#x6237;&#x3002;&#x8BF7;&#x4F7F;&#x7528;<code>modLanguage=&quot;scala&quot;</code>&#xFF0C;&#x81F3;&#x4E8E;Java&#x7528;&#x6237;&#xFF0C;&#x5176;&#x9ED8;&#x8BA4;&#x9879;&#x5C31;&#x662F;<code>&quot;java&quot;</code>&#x3002;    </li>
+</ul>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x4F60;&#x7684;&#x4E3B;&#x7C7B;&#x5E94;&#x8BE5;&#x50CF;&#x8FD9;&#x4E2A;&#x4E9A;&#x5B50;:</p>
+<pre><code>@Mod(modid=&quot;basicmod&quot;,name=&quot;BasicMod&quot;,version=&quot;1.0.0&quot;,acceptedMinecraftVersions=&quot;1.12.2&quot;)
+public class BasicMod {
+}
+</code></pre><p>&#x5F53;&#x7136;&#xFF0C;&#x50CF;<code>modid</code>&#x8FD9;&#x6837;&#x7684;&#x53C2;&#x6570;&#x5C3D;&#x91CF;&#x8FD8;&#x662F;&#x4F5C;&#x4E3A;&#x7C7B;&#x4E2D;&#x7684;&#x6210;&#x5458;&#x4E3A;&#x597D;&#x3002;
+&#x7A0D;&#x5FAE;&#x4FEE;&#x6539;&#x4E00;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>@Mod(modid=BasicMod.MODID,name=BasicMod.NAME,version=BasicMod.VERSION,acceptedMinecraftVersions=&quot;1.12.2&quot;)
+public class BasicMod {
+    public static final String MODID = &quot;basicmod&quot;;
+    public static final String NAME = &quot;BasicMod&quot;;
+    public static final String VERSION = &quot;1.0.0&quot;;
+}
+</code></pre><p>&#x73B0;&#x5728;&#x53EA;&#x9700;&#x6700;&#x540E;&#x4E00;&#x6B65;&#x2014;&#x2014;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3002;</p>
+<pre><code>@Mod.Instance(BasicMod.MODID)
+public static BasicMod instance;
+</code></pre><p>&#x5173;&#x4E8E;&#x4E3B;&#x7C7B;&#x7684;&#x90E8;&#x5206;&#x5C31;&#x5230;&#x8FD9;&#x91CC;&#x4E86;&#x3002;</p>
+<hr>
+<h2 id="&#x4EE3;&#x7406;&#x5546;">&#x4EE3;&#x7406;<del>(&#x5546;)</del></h2>
+<p>Forge&#x52A0;&#x8F7D;&#x6A21;&#x7EC4;&#x6709;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;:<code>preInit</code>,<code>init</code>,<code>postInit</code>&#x3002;&#x6211;&#x4EEC;&#x8981;&#x4E3A;&#x8FD9;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;&#x7684;&#x52A0;&#x8F7D;&#x5728;&#x4E3B;&#x7C7B;&#x4E2D;&#x6DFB;&#x52A0;&#x4E09;&#x4E2A;&#x51FD;&#x6570;&#x3002;&#x540D;&#x5B57;&#x968F;&#x4FBF;&#x3002;&#x63A8;&#x8350;&#x6309;&#x7167;&#x4E0A;&#x9762;&#x4E09;&#x4E2A;&#x52A0;&#x8F7D;&#x9636;&#x6BB5;&#x7684;&#x540D;&#x5B57;&#x547D;&#x540D;&#x3002;<br>&#x4F46;Forge&#x5E76;&#x4E0D;&#x77E5;&#x9053;&#x4F60;&#x7684;&#x52A0;&#x8F7D;&#x51FD;&#x6570;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x76D1;&#x542C;FML&#x751F;&#x547D;&#x5468;&#x671F;&#x4E8B;&#x4EF6;&#x3002;</p>
+<h3 id="&#x4EC0;&#x4E48;&#x662F;&#x4E8B;&#x4EF6;">&#x4EC0;&#x4E48;&#x662F;&#x4E8B;&#x4EF6;......</h3>
+<p>&#x8FD9;&#x8FD8;&#x662F;&#x7B49;&#x4EE5;&#x540E;&#x518D;&#x8BF4;&#x5427;&#x3002;&#x4F60;&#x53EA;&#x9700;&#x8981;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x6CE8;&#x89E3;&#x2014;&#x2014;<code>@EventHandler</code>&#x3002;&#x5B83;&#x4F1A;&#x6839;&#x636E;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x6765;&#x5224;&#x65AD;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x76D1;&#x542C;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#x4E8B;&#x4EF6;&#x3002;  </p>
+<ul>
+<li><code>FMLPreInitializationEvent</code>&#xFF1A;preInit  </li>
+<li><code>FMLInitializationEvent</code>:init  </li>
+<li><code>FMLPostInitializationEvent</code>:postInit  </li>
+</ul>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x4F60;&#x7684;&#x4E3B;&#x7C7B;&#x770B;&#x8D77;&#x6765;&#x5E94;&#x8BE5;&#x50CF;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code>public class BasicMod {
+    public static final String MODID = &quot;basicmod&quot;;
+    public static final String NAME = &quot;BasicMod&quot;;
+    public static final String VERSION = &quot;1.0.0&quot;;
+
+    @Mod.Instance(BasicMod.MODID)
+    public static BasicMod instance;
+
+    @Mod.EventHandler
+    public void preInit(FMLPreInitializationEvent event)
+    {
+
+    }
+
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent event)
+    {
+
+    }
+
+    @Mod.EventHandler
+    public void postInit(FMLPostInitializationEvent event)
+    {
+
+    }
+}
+</code></pre><p>&#x73B0;&#x5728;&#xFF0C;&#x56DE;&#x5230;&#x6807;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4EE3;&#x7406;<del>(&#x5546;)</del></p>
+<h3 id="&#x4EC0;&#x4E48;&#x662F;&#x4EE3;&#x7406;&#xFF1F;">&#x4EC0;&#x4E48;&#x662F;&#x4EE3;&#x7406;&#xFF1F;</h3>
+<p>&#x4F17;&#x6240;&#x5468;&#x77E5;&#xFF0C;&#x6211;&#x7684;&#x4E16;&#x754C;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x4E24;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x6709;&#x4E9B;&#x4EE3;&#x7801;&#x8981;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x6267;&#x884C;&#xFF0C;&#x6709;&#x4E9B;&#x4EE3;&#x7801;&#x8981;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x6267;&#x884C;&#x3002;&#x4ED6;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#x4E4B;&#x5DE8;&#x5927;&#x8DB3;&#x4EE5;&#x6211;&#x4EEC;&#x518D;&#x505A;&#x4E00;&#x4E2A;&#x6A21;&#x7EC4;&#x3002;<br>&#x5F53;&#x7136;&#xFF0C;&#x8FD9;&#x4F1A;&#x589E;&#x52A0;&#x6A21;&#x7EC4;&#x5F00;&#x53D1;&#x7684;&#x96BE;&#x5EA6;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x518D;&#x5199;&#x4E00;&#x4E2A;&#x6A21;&#x7EC4;&#x3002;<del>&#x6B22;&#x547C;&#x5427;&#xFF01;</del>&#x56E0;&#x4E3A;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x4EE3;&#x7801;&#x5BA2;&#x6237;&#x7AEF;&#x4E5F;&#x4F1A;&#x6267;&#x884C;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x4EE3;&#x7406;&#x6765;&#x533A;&#x5206;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x3002;<br>&#x6211;&#x4EEC;&#x9996;&#x5148;&#x5EFA;&#x4E00;&#x4E2A;&#x5305;<code>flysong.BasicMod.proxy</code>&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x5305;&#x4E0B;&#x5EFA;&#x4E24;&#x4E2A;&#x7C7B;&#xFF1A;<code>Common</code>&#x548C;<code>Client</code>&#x3002;
+&#x5728;Common&#x4E2D;&#x6DFB;&#x52A0;&#x4E09;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x51FD;&#x6570;&#x540D;&#x548C;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x90FD;&#x548C;&#x4E0A;&#x6587;&#x63D0;&#x5230;&#x7684;&#x90A3;&#x4E09;&#x4E2A;&#x51FD;&#x6570;&#x4E00;&#x6837;&#x3002;&#x6CE8;&#x610F;&#xFF1A;&#x4E0D;&#x7528;<code>@EventHandler</code>&#x6CE8;&#x89E3;&#x3002;<br>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x8BA9;<code>Client</code>&#x7EE7;&#x627F;&#x4E8E;<code>Common</code>,&#x91CD;&#x5199;<code>Common</code>&#x4E2D;&#x7684;&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#x5E76;&#x4E14;&#x8BA9;&#x8FD9;&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#x5404;&#x81EA;&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x7684;&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;<br>&#x8BF7;&#x539F;&#x8C05;&#x6211;&#xFF0C;&#x8FD9;&#x6BB5;&#x8BDD;&#x7684;&#x786E;&#x6709;&#x70B9;&#x62D7;&#x53E3;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x770B;&#x4EE3;&#x7801;&#x5427;&#xFF1A;
+<code>flysong.BasicMod.proxy.Common</code>  </p>
+<pre><code>package flysong.BasicMod.proxy;
+
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+public class Common {
+    public void preInit(FMLPreInitializationEvent event)
+    {
+
+    }
+
+    public void init(FMLInitializationEvent event)
+    {
+
+    }
+
+    public void postInit(FMLPostInitializationEvent event)
+    {
+
+    }
+}
+</code></pre><p><code>flysong.BasicMod.proxy.Client</code>  </p>
+<pre><code>package flysong.BasicMod.proxy;
+
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+public class Client extends Common {
+
+    @Override
+    public void preInit(FMLPreInitializationEvent event)
+    {
+        super.preInit(event);
+    }
+
+    @Override
+    public void init(FMLInitializationEvent event)
+    {
+        super.init(event);
+    }
+
+    @Override
+    public void postInit(FMLPostInitializationEvent event)
+    {
+        super.postInit(event);
+    }
+}
+</code></pre><p>&#x56DE;&#x5230;&#x4E3B;&#x7C7B;&#x3002;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8BA9;Forge&#x77E5;&#x9053;&#x6211;&#x4EEC;&#x4EE3;&#x7406;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6CE8;&#x89E3;&#x2014;&#x2014;<code>@SidedProxy</code>&#x3002;
+&#x8FD9;&#x4E2A;&#x6CE8;&#x89E3;&#x6709;&#x4E09;&#x4E2A;&#x53C2;&#x6570;<code>serverSide</code>&#xFF0C;<code>clientSide</code>&#xFF0C;<code>modId</code>&#x3002;<code>serverSide</code>&#x586B;&#x7684;&#x662F;&#x4F60;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#x4EE3;&#x7406;&#x5305;&#xFF0C;<code>clientSide</code>&#x586B;&#x7684;&#x662F;&#x4F60;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x4EE3;&#x7406;&#x5305;,<code>modId</code>&#x5C31;&#x662F;&#x4F60;&#x7684;&#x6A21;&#x7EC4;ID&#x3002;<br>&#x6700;&#x540E;&#xFF0C;&#x5728;&#x4E3B;&#x7C7B;&#x7684;&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#x91CC;&#x8C03;&#x7528;&#x670D;&#x52A1;&#x7AEF;&#x4EE3;&#x7406;&#x7684;&#x4E09;&#x4E2A;&#x5BF9;&#x5E94;&#x65B9;&#x6CD5;&#x3002;
+&#x8FD9;&#x7AE0;&#x5C31;&#x5230;&#x8FD9;&#x91CC;&#x4E86;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728;<a href="https://github.com/theflysong/1.12ForgeModCourse" target="_blank">&#x8FD9;&#x91CC;</a>&#x67E5;&#x770B;&#x6E90;&#x4EE3;&#x7801;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.1.1.html" class="navigation navigation-prev " aria-label="Previous page: 1.1.1 开发环境的构建，模组的运行、发布以及模组信息">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.1.3.html" class="navigation navigation-next " aria-label="Next page: 1.1.3 第一个物品">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.1.2 模组主类及代理(商)","level":"1.2.2","depth":2,"next":{"title":"1.1.3 第一个物品","level":"1.2.3","depth":2,"path":"1.1.3.md","ref":"1.1.3.md","articles":[]},"previous":{"title":"1.1.1 开发环境的构建，模组的运行、发布以及模组信息","level":"1.2.1","depth":2,"path":"1.1.1.md","ref":"1.1.1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1.1.2.md","mtime":"2020-03-10T07:39:10.854Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-12T09:21:37.925Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
