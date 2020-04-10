@@ -492,7 +492,6 @@
 <li>Potion &#x836F;&#x6C34;</li>
 <li>PotionType &#x836F;&#x6C34;&#x7C7B;&#x578B;</li>
 <li>IRecipe &#x914D;&#x65B9;<del>&#xFF08;&#x539F;&#x7248;&#x914D;&#x65B9;&#xFF09;</del></li>
-<li>ShapedRecipes &#x51B6;&#x70BC;&#x914D;&#x65B9;<del>&#xFF08;&#x539F;&#x7248;&#x51B6;&#x70BC;&#x914D;&#x65B9;&#xFF09;</del></li>
 <li>SoundEvent &#x58F0;&#x97F3;</li>
 <li>VillagerProfession &#x6751;&#x6C11;&#x804C;&#x4E1A;</li>
 </ul>
@@ -589,6 +588,7 @@
 <p>&#x4E4B;&#x540E;&#x5728;&#x4E8B;&#x4EF6;&#x4E2D;&#x6CE8;&#x518C;&#x4F60;&#x7684;&#x65B9;&#x5757;&#xFF0C;&#x4E0E;&#x7269;&#x54C1;&#x7C7B;&#x4F3C;&#xFF1A;</p>
 <pre><code class="lang-java">ModelResourceLocation model = <span class="hljs-keyword">new</span> ModelResourceLocation(block.getRegistryName(), <span class="hljs-string">&quot;inventory&quot;</span>);       ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), [metadata], model);
 </code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x8BF7;&#x52A0;&#x4E0A;@SideOnly(value= Side.CLIENT),&#x56E0;&#x4E3A;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x4E0A;&#x6E32;&#x67D3;&#x65B9;&#x5757;&#x6750;&#x8D28;&#x66F4;&#x662F;&#x4E00;&#x4E2A;&#x8352;&#x5510;&#x7684;&#x884C;&#x4E3A;&#x3002;</p>
 <p>&#x6700;&#x540E;&#x6DFB;&#x52A0;&#x8BED;&#x8A00;&#x6587;&#x4EF6;:</p>
 <p>&#x4E0E;&#x7269;&#x54C1;&#x4E0D;&#x540C;&#xFF0C;&#x65B9;&#x5757;&#x7684;&#x672A;&#x672C;&#x5730;&#x5316;&#x540D;&#x79F0;&#x662F;<code>tile.[unlocalizedName].name</code></p>
 <p>&#x8FD9;&#x7AE0;&#x5C31;&#x5230;&#x8FD9;&#x91CC;&#x7ED3;&#x675F;&#x4E86;&#x3002;</p>
@@ -635,7 +635,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.1.2 你的第一个方块","level":"1.3.2","depth":2,"next":{"title":"2.1.3 你的第一个创造模式物品栏","level":"1.3.3","depth":2,"path":"2.1.3.md","ref":"./2.1.3.md","articles":[]},"previous":{"title":"2.1.1 你的第一个物品","level":"1.3.1","depth":2,"path":"2.1.1.md","ref":"./2.1.1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2.1.2.md","mtime":"2020-04-07T02:41:59.505Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-07T02:42:36.073Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.1.2 你的第一个方块","level":"1.3.2","depth":2,"next":{"title":"2.1.3 你的第一个创造模式物品栏","level":"1.3.3","depth":2,"path":"2.1.3.md","ref":"./2.1.3.md","articles":[]},"previous":{"title":"2.1.1 你的第一个物品","level":"1.3.1","depth":2,"path":"2.1.1.md","ref":"./2.1.1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2.1.2.md","mtime":"2020-04-10T07:40:15.588Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-10T09:01:59.341Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

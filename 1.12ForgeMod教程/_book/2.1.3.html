@@ -471,7 +471,43 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="213-&#x4F60;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x521B;&#x9020;&#x6A21;&#x5F0F;&#x7269;&#x54C1;&#x680F;">2.1.3 &#x4F60;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x521B;&#x9020;&#x6A21;&#x5F0F;&#x7269;&#x54C1;&#x680F;</h1>
-<p>WIP</p>
+<h2 id="&#x5C06;&#x4F60;&#x7684;&#x7269;&#x54C1;&#x65B9;&#x5757;&#x52A0;&#x5165;&#x521B;&#x9020;&#x6A21;&#x5F0F;&#x7269;&#x54C1;&#x680F;">&#x5C06;&#x4F60;&#x7684;&#x7269;&#x54C1;/&#x65B9;&#x5757;&#x52A0;&#x5165;&#x521B;&#x9020;&#x6A21;&#x5F0F;&#x7269;&#x54C1;&#x680F;</h2>
+<p>&#x5C31;&#x662F;&#x524D;&#x51E0;&#x7AE0;&#x8BB2;&#x5230;&#x7684;setCreativeTabs()&#x65B9;&#x6CD5;&#x4E86;  </p>
+<h2 id="&#x81EA;&#x5DF1;&#x7684;&#x7B80;&#x5355;&#x521B;&#x9020;&#x6A21;&#x5F0F;&#x7269;&#x54C1;&#x680F;">&#x81EA;&#x5DF1;&#x7684;&#x7B80;&#x5355;&#x521B;&#x9020;&#x6A21;&#x5F0F;&#x7269;&#x54C1;&#x680F;</h2>
+<p>&#x8FD9;&#x4E2A;&#x5B9E;&#x5728;&#x592A;&#x7B80;&#x5355;&#x4E86;&#xFF1A;<br>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x7EE7;&#x627F;&#x4E8E;CreativeTabs&#xFF0C;&#x5728;&#x7236;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x91CC;&#x8F93;&#x5165;&#x975E;&#x672C;&#x5730;&#x5316;&#x540D;&#x79F0;&#xFF0C;&#x5728;getTabIconItem()&#x65B9;&#x6CD5;&#x91CC;&#x8FD4;&#x56DE;&#x7269;&#x54C1;&#x680F;&#x7684;&#x56FE;&#x6807;&#xFF0C;&#x8FD9;&#x4E2A;&#x56FE;&#x6807;&#x5C31;&#x662F;&#x5BF9;&#x5E94;&#x7684;&#x7269;&#x54C1;&#x3002;  </p>
+<p>&#x4ED6;&#x770B;&#x8D77;&#x6765;&#x50CF;&#x8FD9;&#x6837;  </p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CreativeTabsTest</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">CreativeTabs</span>
+</span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">CreativeTabsTest</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">super</span>(<span class="hljs-string">&quot;test&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Item <span class="hljs-title">getTabIconItem</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> ItemLoader.testItem;
+    }
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;CreativeTabsLoader&#x7C7B;&#xFF0C;&#x5728;&#x7C7B;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;public&#x7684;CreativeTabs&#x6210;&#x5458;&#x3002;</p>
+<p>&#x7136;&#x540E;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x8BE5;&#x6210;&#x5458;&#x4E3A;CreativeTabsTest&#x7684;&#x5B9E;&#x4F8B;&#x3002;</p>
+<p>&#x770B;&#x8D77;&#x6765;&#x50CF;&#x8FD9;&#x6837;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CreativeTabsLoader</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> CreativeTabs test;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">CreativeTabsLoader</span><span class="hljs-params">()</span>
+    </span>{
+        test = <span class="hljs-keyword">new</span> CreativeTabsTest();
+    }
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x628A;&#x4F60;&#x7684;&#x7269;&#x54C1;&#x7684;&#x521B;&#x9020;&#x6A21;&#x5F0F;&#x7269;&#x54C1;&#x680F;&#x6539;&#x4E3A;CreativeTabsLoader.test&#x3002;</p>
+<p>&#x6700;&#x540E;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x4EE3;&#x7406;&#x4E2D;&#x7684;&#x7269;&#x54C1;&#x6CE8;&#x518C;&#x7C7B;&#x5B9E;&#x4F8B;&#x548C;&#x65B9;&#x5757;&#x6CE8;&#x518C;&#x7C7B;&#x5B9E;&#x4F8B;&#x524D;&#x9762;&#x521B;&#x5EFA;&#x4F60;&#x7684;&#x521B;&#x9020;&#x6A21;&#x5F0F;&#x7269;&#x54C1;&#x680F;&#x6CE8;&#x518C;&#x7C7B;&#x5B9E;&#x4F8B;&#xFF08;&#x4E5F;&#x4E0D;&#x5FC5;&#x4FDD;&#x5B58;&#x5B83;&#xFF09;</p>
+<h2 id="&#x9AD8;&#x7EA7;&#x4E00;&#x70B9;&#xFF1F;">&#x9AD8;&#x7EA7;&#x4E00;&#x70B9;&#xFF1F;</h2>
+<p>setBackgroundImageName(name)&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x7269;&#x54C1;&#x680F;&#x7684;&#x80CC;&#x666F;&#x56FE;&#x7247;&#xFF0C;&#x8BE5;&#x56FE;&#x7247;&#x5FC5;&#x987B;&#x4F4D;&#x4E8E;assets/minecraft(&#x975E;modid)/textures/gui/container/creative<em>inventory&#x4E0B;&#xFF0C;&#x4E14;&#x5927;&#x5C0F;&#x662F;256x256&#xFF0C;&#x540D;&#x5B57;&#x662F;tab</em>[name].png&#x7684;&#x56FE;&#x7247;&#x3002;</p>
+<p>hasSearchBar()&#x7528;&#x6765;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x641C;&#x7D22;&#x6846;&#xFF0C;getSearchbarWidth()&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x641C;&#x7D22;&#x6846;&#x957F;&#x5EA6;&#x3002;</p>
 
                                 
                                 </section>
@@ -515,7 +551,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.1.3 你的第一个创造模式物品栏","level":"1.3.3","depth":2,"next":{"title":"2.2.1 事件入门","level":"1.3.4","depth":2,"path":"2.2.1.md","ref":"./2.2.1.md","articles":[]},"previous":{"title":"2.1.2 你的第一个方块","level":"1.3.2","depth":2,"path":"2.1.2.md","ref":"./2.1.2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2.1.3.md","mtime":"2020-04-06T09:53:30.465Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-07T02:42:36.073Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.1.3 你的第一个创造模式物品栏","level":"1.3.3","depth":2,"next":{"title":"2.2.1 事件入门","level":"1.3.4","depth":2,"path":"2.2.1.md","ref":"./2.2.1.md","articles":[]},"previous":{"title":"2.1.2 你的第一个方块","level":"1.3.2","depth":2,"path":"2.1.2.md","ref":"./2.1.2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2.1.3.md","mtime":"2020-04-10T07:58:32.840Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-10T09:01:59.341Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
